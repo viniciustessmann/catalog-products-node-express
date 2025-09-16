@@ -1,11 +1,11 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
-const mysql = require('mysql');
+const conn = require('./db/conn');
 require('dotenv').config();
 
 const productsRouter = require('./routes/products')
 
-const port = 3000;
+const port = process.env.PORT;
 const app = express()
 
 const hbs = exphbs.create({
@@ -19,5 +19,7 @@ app.use(express.json())
 app.use(express.static('public'))
 app.use('/products', productsRouter);
 
+conn.sync().then(() => {
+    app.listen(port, () => console.log(`Run on port ${port}`))
+});
 
-app.listen(port, () => console.log(`Run on port ${port}`))
