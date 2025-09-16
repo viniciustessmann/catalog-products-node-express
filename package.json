@@ -13,7 +13,8 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
-    "express-handlebars": "^8.0.3"
+    "express-handlebars": "^8.0.3",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

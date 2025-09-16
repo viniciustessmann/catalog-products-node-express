@@ -1,5 +1,13 @@
 <h1>Hello world handlebars with layout!</h1>
 
+<h2>Cadastre seu produto:</h2>
+
+<form action="/products" method="POST">
+    <input type="text" name="name" placeholder="Nome do produto"/>
+    <input type="text" name="price" placeholder="Valor do produto" />
+    <input type="submit" value="Cadastrar" />
+</form>
+
 <ul>
     {{#each products}}
        {{> item}}
